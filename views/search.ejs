@@ -1,0 +1,23 @@
+<%-include("partials/header") %>
+
+
+<%-include("partials/nav") %>
+
+
+<article>
+    <div class="container-fluid mt-5">
+        <div class="row justify-content-center ">
+            <%  hits.map((hit) => { %>
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="img-thumbnail">
+                        <img src="<%= hit.webformatURL %>" width="100%" height="auto" alt="btfiy">
+                    </div>
+                </div>
+            </div>
+            <% }) %>
+        </div>
+    </div>
+</article>
+
+<%- include("partials/footer") %>

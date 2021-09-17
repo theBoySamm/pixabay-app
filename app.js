@@ -16,12 +16,10 @@ app.get("/", async function (req, res) {
     const response = await fetch(api);
     const data = await response.json();
     const { hits } = data;
-    // console.log(hits.webformatURL);
+    res.render("index", { hits: hits });
   } catch (error) {
     console.log(error);
   }
-
-  res.render("index", { hits: hits });
 });
 
 app.get("/search", async function (req, res) {
@@ -33,13 +31,10 @@ app.get("/search", async function (req, res) {
     const data = await response.json();
 
     const { hits } = data;
-    // const [{webformatURL} ] = hits
-    // console.log(webformatURL);
+    res.render("search", { hits: hits });
   } catch (error) {
     console.log(error);
   }
-
-  res.render("search", { hits: hits });
 });
 
 app.get("/search/:id", async (req, res) => {});
